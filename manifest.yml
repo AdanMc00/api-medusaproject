@@ -1,0 +1,6 @@
+---
+applications:
+ - name: kca99
+   random-route: false
+   memory: 64M
+
