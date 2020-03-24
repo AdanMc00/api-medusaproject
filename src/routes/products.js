@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 
 router.post('/',async (req, res) => {
   try {
-    const newProduct = await product.create(req.body)
+    const newProduct = await Product.create(req.body)
     res.status(200)
     res.json({
       success: true,
@@ -48,7 +48,7 @@ router.post('/',async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const id = req.params.id
-    const productfound = await product.getById(id)
+    const productfound = await Product.getById(id)
     res.json({
       success: true,
       message: 'products by Id',
@@ -68,7 +68,7 @@ router.get('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const id = req.params.id
-    const productDel = await product.deletebyId(id)
+    const productDel = await Product.deletebyId(id)
     res.json({
       success: true,
       message: 'product Delete',
@@ -89,7 +89,7 @@ router.patch('/:id', async (req, res) => {
   try {
     const id = req.params.id
     const info = req.body
-    const upDateproduct = await product.updateById(id, info)
+    const upDateproduct = await Product.updateById(id, info)
 
     res.json({
       success: true,
