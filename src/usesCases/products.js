@@ -6,7 +6,7 @@ function create({
   description,
   pricePublic,
   priceStore,
-  departmen,
+  department,
   
 }) {
   const newProduct = new Product({
@@ -15,7 +15,7 @@ function create({
     description,
     pricePublic,
     priceStore,
-    departmen,
+    department,
     
   })
   return newProduct.save()

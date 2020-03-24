@@ -1,12 +1,12 @@
 
 const express = require('express')
-const product = require('../usesCases/products')
+const Product = require('../usesCases/products')
 const router = express.Router()
 const auth = require('../middlewares/auth')
 
 router.get('/', async (req, res) => {
   try {
-    const product = await product.getAll()
+    const product = await Product.getAll()
     console.log(product)
     res.status(200)
     res.json({
@@ -37,8 +37,8 @@ router.post('/',async (req, res) => {
       }
     })
   } catch (error) {
-    response.status(400)
-    response.json({
+    res.status(400)
+    res.json({
       success: false,
       message: error.message
     })
