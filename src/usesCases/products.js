@@ -1,41 +1,23 @@
+const Product = require("../models/products");
 
-const Product = require('../models/products')
-
-function create({
-  barCode,
-  description,
-  pricePublic,
-  priceStore,
-  department,
-  
-}) {
-  const newProduct = new Product({
-    
-    barCode,
-    description,
-    pricePublic,
-    priceStore,
-    department,
-    
-  })
-  return newProduct.save()
+function create(postData) {
+    return Product.create(postData)
 }
 
 function getAll() {
-  return Product.find()
+  return Product.find();
 }
 
 function getById(id) {
-  return Product.findById(id)
-
+  return Product.findById(id);
 }
 
 function deletebyId(id) {
-  return Product.findByIdAndDelete(id)
+  return Product.findByIdAndDelete(id);
 }
 
 function updateById(id, postInfoToUpdate) {
-  return Product.findByIdAndUpdate(id, postInfoToUpdate)
+  return Product.findByIdAndUpdate(id, postInfoToUpdate);
 }
 
 module.exports = {
@@ -44,4 +26,4 @@ module.exports = {
   getAll,
   getById,
   updateById
-}
+};
