@@ -7,6 +7,9 @@ function create(postData) {
 function getAll() {
   return Product.find();
 }
+function getById(id) {
+  return Product.findById(id);
+}
 function deletebyId(id) {
   return Product.findByIdAndDelete(id);
 }
@@ -14,5 +17,6 @@ function deletebyId(id) {
 module.exports = {
   create,
   deletebyId,
-  getAll
+  getAll,
+  getById
 };
