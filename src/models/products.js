@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 const productsSchema = new mongoose.Schema({
-  barCode:{
+  barCode: {
     type: Number,
     minlength: 1,
     maxlength: 100,
@@ -18,21 +18,22 @@ const productsSchema = new mongoose.Schema({
   },
   pricePublic: {
     type: Number,
-    required:true
+    required: true
   },
   priceStore: {
     type: Number,
-    required: false,
-    
+    required: false
   },
   department: {
     type: String,
     required: false,
-    minlength:2,
-    maxlength:30
-
+    minlength: 2,
+    maxlength: 30
+  },
+  cantidad: {
+    type: Number,
+    required: true
   }
- 
-})
+});
 
 module.exports = mongoose.model('Products', productsSchema)

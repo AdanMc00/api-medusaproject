@@ -66,6 +66,26 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+router.get("/code/:code", async (req, res) => {
+  try {
+    const code = req.params.code;
+    const codefound = await Product.getByCode(code);
+    res.json({
+      success: true,
+      message: "products by code",
+      data: {
+        code: codefound
+      }
+    });
+  } catch (error) {
+    res.status(400),
+      res.json({
+        success: false,
+        message: error.message
+      });
+  }
+});
+
 router.delete('/:id', async (req, res) => {
   try {
     const id = req.params.id
