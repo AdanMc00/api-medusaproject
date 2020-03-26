@@ -7,7 +7,6 @@ const auth = require('../middlewares/auth')
 router.get('/', async (req, res) => {
   try {
     const product = await Product.getAll()
-    console.log(product)
     res.status(200)
     res.json({
       success: true,
@@ -29,6 +28,8 @@ router.post('/',async (req, res) => {
   try {
     const newProduct = await Product.create(req.body)
     res.status(200)
+    console.log(newProduct)
+
     res.json({
       success: true,
       message: 'product create',
