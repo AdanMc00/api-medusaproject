@@ -16,6 +16,10 @@ function deletebyId(id) {
   return Product.findByIdAndDelete(id);
 }
 
+function getByCode(code) {
+  return Product.find({ barCode: code});
+}
+
 function updateById(id, postInfoToUpdate) {
   return Product.findByIdAndUpdate(id, postInfoToUpdate);
 }
@@ -25,5 +29,6 @@ module.exports = {
   deletebyId,
   getAll,
   getById,
-  updateById
+  updateById,
+  getByCode
 };
