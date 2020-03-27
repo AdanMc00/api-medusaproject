@@ -1,6 +1,6 @@
 ---
 applications:
- - name: kca99
+ - name: medusa-api
    random-route: false
-   memory: 64M
+   memory: 32M
 
